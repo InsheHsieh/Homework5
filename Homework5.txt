@@ -1,0 +1,63 @@
+Console.WriteLine("/////Homework 5/////");
+string name, gender, ID, a, correction;
+int date;
+        Console.WriteLine("\nPlease insert your full name: ");
+        name = Console.ReadLine();
+
+        Console.WriteLine("Please select your gender (Male/Female): ");
+        gender = Console.ReadLine();
+
+        Console.WriteLine("Please fill in your birthday (YYYYMMDD): ");
+        date = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Please enter your student ID: ");
+        ID = Console.ReadLine();
+do
+{
+        Console.WriteLine("\n______________________________________________________");
+        Console.WriteLine("Please check your information before submitting to the cloud: ");
+        Console.WriteLine("Your name is " + name);
+        Console.WriteLine("Your gender is " + gender);
+        Console.WriteLine("Your birthday is " + date);
+        Console.WriteLine("Your student ID is " + ID);
+        Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        Console.WriteLine("Please type 1 to finish. Please type 2 to recorrect the information");
+        Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+        a = Console.ReadLine();
+        if (a == "2")
+        {
+            Console.WriteLine("\nWhat information do you wish to change (Name/Gender/Birthday/Student ID): ");
+            correction = Console.ReadLine();
+
+                switch(correction)
+                {
+                    case "Name":
+                        Console.Write("\nPlease re-insert your name: ");
+                        name = Console.ReadLine();
+                        continue;
+
+                    case "Gender":
+                        Console.Write("\nPlease re-select your gender: ");
+                        gender = Console.ReadLine();
+                        continue;
+
+                    case "Birthday":
+                        Console.WriteLine("\nPlease re-fill your date (YYYYMMDD): ");
+                        date = Convert.ToInt32(Console.ReadLine());
+                        continue;
+
+                    case "Student ID":
+                        Console.WriteLine("\nPlease re-enter your student ID: ");
+                        ID = Console.ReadLine();
+                        continue;
+
+                    default:
+                        Console.Write("\nError occurred while processing your request. Please try again later");
+                        Console.WriteLine();
+                        break;
+                }
+        }
+}while(a == "2");
+
+Console.WriteLine("\nThank you for your feedback, looking forward to serve you agian! ^^");
